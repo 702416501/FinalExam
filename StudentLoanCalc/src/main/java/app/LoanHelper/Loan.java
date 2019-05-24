@@ -28,7 +28,7 @@ public class Loan {
 			boolean compounds, double fV) throws ParseException {
 		super();
 		
-		StartDate =  "2019-06-01" ;
+		StartDate =  "2019-06-01"  ;
 		LoanAmount = loanAmount;
 		InterestRate = interestRate;
 		Term = term;
