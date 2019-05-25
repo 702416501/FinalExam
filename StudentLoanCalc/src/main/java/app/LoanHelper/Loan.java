@@ -105,7 +105,9 @@ public class Loan {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
        Date incrementedDate = DateUtils.addMonths(sdf.parse(date), 1);
-       return sdf.format(incrementedDate);*/
+       return sdf.format(incrementedDate);
+       }
+       */
 	
 }
 

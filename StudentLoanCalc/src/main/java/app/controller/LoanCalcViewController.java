@@ -1,8 +1,10 @@
 package app.controller;
 
 import app.StudentCalc;
+
 import javafx.fxml.FXML; 
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import java.net.URL;
 import java.time.LocalDate;
@@ -18,6 +20,24 @@ public class LoanCalcViewController implements Initializable   {
 	@FXML
 	private TextField LoanAmount;
 
+	@FXML
+	private TableColumn<String,Double> PPMT;
+	
+	@FXML
+	private TableColumn<String,Double> IPMT;
+	
+	@FXML
+	private TableColumn<String,Double> Balance;
+	
+	@FXML
+	private TableColumn<String,String> DueDate;
+	
+	@FXML
+	private TableColumn<String,Double> ExtraPayment;
+	
+	@FXML
+	private TableColumn<String,Integer> PaymentID;
+	
 	
 	@FXML
 	private Label lblTotalPayemnts;
@@ -53,5 +73,8 @@ public class LoanCalcViewController implements Initializable   {
 		LocalDate localDate = PaymentStartDate.getValue();
 	 
 		System.out.println(localDate);
+		
+		
+		
 	}
 }
