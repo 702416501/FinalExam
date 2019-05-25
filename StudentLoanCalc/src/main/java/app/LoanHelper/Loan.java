@@ -51,16 +51,18 @@ public class Loan {
 			dRollingBalance = p.getBalance();
 			dRollingDueDate = addOneMonthApacheCommons(dRollingDueDate);
 			
-			if (dRollingBalance <= 0)
+			if (dRollingBalance <= FV)
 			{
-				this.LoanPayments.getLast().setBalance(0);	
+				this.LoanPayments.getLast().setBalance(FV);	
 				break;
 			}
 			
 		} while (true);
 		
 		
-		
+		for (int i : LoanPayments.size()) {
+			
+		}
 		
 	}
 	public double getLoanAmount() {
@@ -108,6 +110,7 @@ public class Loan {
        return sdf.format(incrementedDate);
        }
        
+	
 	
 }
 

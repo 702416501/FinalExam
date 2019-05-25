@@ -1,7 +1,7 @@
 package app.controller;
 
 import app.StudentCalc;
-
+import app.LoanHelper.Loan;
 import javafx.fxml.FXML; 
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -19,6 +19,16 @@ public class LoanCalcViewController implements Initializable   {
 	
 	@FXML
 	private TextField LoanAmount;
+	
+	@FXML
+	private TextField InterestRate;
+	
+	@FXML
+	private TextField NbrOfYears;
+	
+	@FXML
+	private TextField AdditionalPayment;
+	
 
 	@FXML
 	private TableColumn<String,Double> PPMT;
@@ -68,12 +78,24 @@ public class LoanCalcViewController implements Initializable   {
 		double dLoanAmount = Double.parseDouble(LoanAmount.getText());
 		System.out.println("Amount: " + dLoanAmount);	
 		
+		System.out.println("Amount: " + InterestRate.getText());
+		double dInterestRate = Double.parseDouble(InterestRate.getText());
+		System.out.println("Amount: " + dInterestRate);	
 		lblTotalPayemnts.setText("123");
+		
+		System.out.println("Amount: " + NbrOfYears.getText());
+		int dNbrOfYears = Integer.parseInt(NbrOfYears.getText());
+		System.out.println("Amount: " + dNbrOfYears);	
+		
+		System.out.println("Amount: " + AdditionalPayment.getText());
+		double dAdditionalPayment = Double.parseDouble(AdditionalPayment.getText());
+		System.out.println("Amount: " + dLoanAmount);	
 		
 		LocalDate localDate = PaymentStartDate.getValue();
 	 
 		System.out.println(localDate);
 		
+		Loan(dLoanAmount, dInterestRate, dNbrOfYears, dAdditionalPayment, true, 0);
 		
 		
 	}
