@@ -3,11 +3,11 @@ package app.LoanHelper;
 import java.text.ParseException;
 
 
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
-
-//import org.apache.commons.lang3.time.DateUtils;
+import org.apache.commons.lang3.time.DateUtils;
 
 public class Loan {
 	
@@ -49,7 +49,7 @@ public class Loan {
 			Payment p = new Payment(++PaymentNbr, dRollingDueDate, dRollingBalance, this);
 			this.LoanPayments.add(p); 
 			dRollingBalance = p.getBalance();
-			//dRollingDueDate = addOneMonthApacheCommons(dRollingDueDate);
+			dRollingDueDate = addOneMonthApacheCommons(dRollingDueDate);
 			
 			if (dRollingBalance <= 0)
 			{
@@ -101,13 +101,13 @@ public class Loan {
 	}
 	
 	
-	/*private  static String addOneMonthApacheCommons(String date) throws ParseException {
+	private  static String addOneMonthApacheCommons(String date) throws ParseException {
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+       SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
        Date incrementedDate = DateUtils.addMonths(sdf.parse(date), 1);
        return sdf.format(incrementedDate);
        }
-       */
+       
 	
 }
 
